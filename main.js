@@ -23,8 +23,8 @@ function main() {
         element: document.body,
         engine: engine,
         options: {
-            width: 800,
-            height: 640,
+            width: 1500,
+            height: 680,
             wireframes: false
         }
     });
@@ -56,8 +56,38 @@ function main() {
     // Add entities here
     const player = new Character(50, 50, 50, 50);
 
-    const ground = new Platform(100, 600, 400, 30);
+    const ground = new Platform(100, 600, 100, 150);
     ground.add();
+    
+    const platform1 = new Platform(200,500, 50,30)
+    platform1.add();
+
+    const platform2 = new Platform(500,500, 50,30)
+    platform2.add();
+
+    const platform3 = new Platform(1000,200, 50,30)
+    platform3.add();
+
+    const platform4 = new Platform(1250,150, 50,30)
+    platform4.add();
+
+    const platform5 = new Platform(1450,100, 50,30)
+    platform5.add();
+    const platform6 = new Platform(400,400, 50,30)
+    platform6.add();
+    const platform7 = new Platform(400,400, 50,30)
+    platform7.add();
+    const platform8 = new Platform(400,400, 50,30)
+    platform8.add();
+    const platform9 = new Platform(400,400, 50,30)
+    platform9.add();
+    const platform10 = new Platform(400,400, 50,30)
+    platform10.add();
+    const platform11 = new Platform(400,400, 50,30)
+    platform11.add();
+    const platform12 = new Platform(400,400, 50,30)
+    platform12.add();
+
 
     const myplayer = new Bob()
     myplayer.add();
