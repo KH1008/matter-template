@@ -8,7 +8,7 @@ class Bob extends Entity {
     constructor() {
         super()
 
-        this.body = Matter.Bodies.rectangle(100, 580, 30, 30, {
+        this.body = Matter.Bodies.rectangle(100, 200, 30, 30, {
             collisionFilter: {
                 category: collisions.character, // The collision category this entity belongs to
                 mask: collisions.ground // The collision categories this entity collides with
