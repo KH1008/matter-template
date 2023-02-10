@@ -6,6 +6,7 @@ import Character from './Character.js';
 import Platform from './Platform.js';
 import Bob from "./Bob.js";
 import Movingplatform from './Movingplatform.js';
+import PassiveEnemy from './PassiveEnemy.js';
 
 function main() {
 
@@ -63,8 +64,16 @@ function main() {
     const ground = new Platform(100, 600, 100, 150);
     ground.add();
     
+    const mouseConstraint = Matter.MouseConstraint.create(engine)
+    Matter.Events.on(mouseConstraint, "mousedown", function() {
+        console.log(mouseConstraint.constraint.pointA)
+    })
+
     const platform1 = new Platform(200,500, 50,30)
     platform1.add();
+    
+    const enemy1 = new PassiveEnemy(500,200)
+    enemy1.add();
 
     const platform2 = new Platform(500,500, 50,30)
     platform2.add();

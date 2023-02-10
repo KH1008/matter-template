@@ -11,7 +11,7 @@ class Bob extends Entity {
         this.body = Matter.Bodies.rectangle(100, 200, 30, 30, {
             collisionFilter: {
                 category: collisions.character, // The collision category this entity belongs to
-                mask: collisions.ground // The collision categories this entity collides with
+                mask: collisions.ground | collisions.enemy// The collision categories this entity collides with
             },
             render: {
                 sprite: {
@@ -26,7 +26,12 @@ class Bob extends Entity {
     } 
 
     tick(){
-        console.log('hello')
+
+        if (Matter.Query.collides(this.body, getByGroup("enemy").bodies).length > 0) {
+            console.log('helloooo')
+            Matter.Body.setPosition(this.body, { x:100, y: 200});
+        }
+
 
         if (keyMap["ArrowRight"] === true) {
             Matter.Body.applyForce(this.body, this.body.position, {x:0.002,y:0})
