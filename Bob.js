@@ -3,6 +3,7 @@ import Entity from "./Entity.js";
 import { keyMap } from "./lib/keyMap.js";
 import collisions from './collisions.js';
 import getByGroup from './lib/getByGroup.js';
+import Bullet from './bullet.js';
 
 class Bob extends Entity {
     constructor() {
@@ -42,11 +43,18 @@ class Bob extends Entity {
             Matter.Body.applyForce(this.body, this.body.position, {x:-0.002,y:0})
         }
 
+        if (keyMap[" "] === true) {
+
+            const bullet = new Bullet(this.body.position.x, this.body.position.y, 1, 0)
+            bullet.add();
+
+        }
+
         
 
         if(Matter.Query.collides(this.body, getByGroup("platform").bodies).length > 0) {
 
-            if (keyMap[" "] === true) {
+            if (keyMap["ArrowUp"] === true) {
                 Matter.Body.applyForce(this.body, this.body.position, {x:0, y:-0.03})
             }
         }

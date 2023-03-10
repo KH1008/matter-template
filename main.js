@@ -72,7 +72,7 @@ function main() {
     const platform1 = new Platform(200,500, 50,30)
     platform1.add();
     
-    const enemy1 = new PassiveEnemy(500,200)
+    const enemy1 = new PassiveEnemy(500,200,[{x:1400, y:1000}, {x:100, y:0}])
     enemy1.add();
 
     const platform2 = new Platform(500,500, 50,30)
